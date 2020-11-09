@@ -15,5 +15,5 @@ export const getElevationInput = state => state.elevationInput;
 export const getNote = state => state.note;
 export const getNoteInput = state => state.noteInput;
 
-export const getLocalHikeList = state => state.hikeList;
-export const getLocalHikeDetails = state => state.hikeDetails;
+export const getLocalHikeList = state => state.localList;
+export const getLocalHikeDetails = state => state.localDetails;

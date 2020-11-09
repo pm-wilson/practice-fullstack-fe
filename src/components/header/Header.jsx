@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Header = () => {
 
@@ -10,8 +10,8 @@ const Header = () => {
   );
 };
 
-Header.propTypes = {
-  //articles: PropTypes.arrayOf(PropTypes.string).isRequired
-};
+// Header.propTypes = {
+//   articles: PropTypes.arrayOf(PropTypes.string).isRequired
+// };
 
 export default Header;

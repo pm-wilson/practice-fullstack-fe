@@ -1,20 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { 
-  getName,
-  getAddress,
-  getLength,
-  getElevation,
-  getNote,
-} from '../../selectors/Selectors';
 import {
   setNameInput,
-  setAddress,
-  setLength,
-  setElevation,
-  setNote,
+  setAddressInput,
+  setLengthInput,
+  setElevationInput,
+  setNoteInput,
 } from '../../actions/actions';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 const List = () => {
   const dispatch = useDispatch();
@@ -24,34 +17,43 @@ const List = () => {
   const elevation = useSelector(state => state.elevation);
   const note = useSelector(state => state.note);
 
-  const handleNameChange = e => {
-    console.log(e.target.value);
-    dispatch(setNameInput(e.target.value));
+  const handleChange = e => {
+    if(e.target.id === 'name') dispatch(setNameInput(e.target.value));
+    if(e.target.id === 'address') dispatch(setAddressInput(e.target.value));
+    if(e.target.id === 'length') dispatch(setLengthInput(e.target.value));
+    if(e.target.id === 'elevation') dispatch(setElevationInput(e.target.value));
+    if(e.target.id === 'note') dispatch(setNoteInput(e.target.value));
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    console.log('submit form');
   };
 
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h3>Add Hike</h3>
         <label>
           <h6>Name</h6>
-          <input target="name" value={name} onChange={handleNameChange}></input>
+          <input id="name" target="name" value={name} onChange={handleChange}></input>
         </label>
         <label>
           <h6>Address</h6>
-          <input target="address" value={address}></input>
+          <input id="address" target="address" value={address} onChange={handleChange}></input>
         </label>
         <label>
           <h6>Length</h6>
-          <input target="length" value={length}></input>
+          <input id="length" target="length" value={length} onChange={handleChange}></input>
         </label>
         <label>
           <h6>Elevation</h6>
-          <input target="elevation" value={elevation}></input>
+          <input id="elevation" target="elevation" value={elevation} onChange={handleChange}></input>
         </label>
         <label>
           <h6>Note</h6>
-          <input target="note" value={note}></input>
+          <input id="note" target="note" value={note} onChange={handleChange}></input>
         </label>
         <button>Submit</button>
       </form>
@@ -62,8 +64,8 @@ const List = () => {
   );
 };
 
-List.propTypes = {
-  //localList: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+// List.propTypes = {
+//   localList: PropTypes.arrayOf(PropTypes.string).isRequired,
+// };
 
 export default List;

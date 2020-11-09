@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Details = () => {
 
@@ -10,8 +10,8 @@ const Details = () => {
   );
 };
 
-Details.propTypes = {
-  //articles: PropTypes.arrayOf(PropTypes.string).isRequired
-};
+// Details.propTypes = {
+//   articles: PropTypes.arrayOf(PropTypes.string).isRequired
+// };
 
 export default Details;

@@ -18,31 +18,31 @@ const initialState = {
   elevation: '',
   note: '',
   localList: [],
-  localdetails: {},
+  localDetails: {},
 };
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
     case SET_NAME:
-      return { ...state, name: state.nameInput };
+      return { ...state, name: state.name };
     case SET_NAME_INPUT:
-      return { ...state, nameInput: action.payload };
+      return { ...state, name: action.payload };
     case SET_ADDRESS:
       return { ...state, address: state.addressInput };
     case SET_ADDRESS_INPUT:
-      return { ...state, addressInput: action.payload };
+      return { ...state, address: action.payload };
     case SET_LENGTH:
       return { ...state, length: state.lengthInput };
     case SET_LENGTH_INPUT:
-      return { ...state, lengthInput: action.payload };
+      return { ...state, length: action.payload };
     case SET_ELEVATION:
       return { ...state, elevation: state.elevationInput };
     case SET_ELEVATION_INPUT:
-      return { ...state, elevationInput: action.payload };
+      return { ...state, elevation: action.payload };
     case SET_NOTE:
-      return { ...state, note: state.noteInput };
+      return { ...state, note: state.note };
     case SET_NOTE_INPUT:
-      return { ...state, noteInput: action.payload };
+      return { ...state, note: action.payload };
     default: return state;
   }
 }
